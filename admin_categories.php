@@ -1,8 +1,9 @@
 <?php
 
 /**
- * Copyright (C) 2008-2012 FluxBB
- * based on code by Rickard Andersson copyright (C) 2002-2008 PunBB
+ * Copyright (C) 2008-2021 SolderBB
+ * based on code by Rickard Andersson, Visman, and the FluxBB devs,
+ * copyright (C) 2002-2008 PunBB and 2008-2012 FluxBB
  * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
  */
 

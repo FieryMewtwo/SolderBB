@@ -1,11 +1,10 @@
-# FluxBB 1.5 Readme
+# SolderBB 1.5 Readme
 
 ## About
 
-FluxBB is an open source forum application released under the GNU General Public
-Licence. It is free to download and use and will remain so. FluxBB was conceived and
-designed to be fast and light with less of the "not so essential" features that some
-of the other forums have whilst not sacrificing essential functionality or usability.
+SolderBB is an open source forum application released under the GNU General Public
+Licence. It is free to download and use and will remain so. SolderBB was conceived and
+designed to be fast and light while still being ready to take on the Web of today.
 
 ## Requirements
 
@@ -18,10 +17,14 @@ of the other forums have whilst not sacrificing essential functionality or usabi
 * Make use of a PHP accelerator such as Zend OPcache
 * Make sure PHP has the zlib module installed to allow FluxBB to gzip output
 
+## Installation instructions
+See the wiki
+
 ## Links
 
 * Homepage: https://fluxbb.org
 * Documentation: https://fluxbb.org/docs/v1.5
 * Community: https://fluxbb.org/forums/
 * Resources: https://fluxbb.org/resources/
-* Development: https://github.com/MioVisman/FluxBB_by_Visman
+* Development: https://github.com/FieryMewtwo/SolderBB
+* 

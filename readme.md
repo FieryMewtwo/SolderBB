@@ -27,4 +27,11 @@ See the wiki
 * Community: https://fluxbb.org/forums/
 * Resources: https://fluxbb.org/resources/
 * Development: https://github.com/FieryMewtwo/SolderBB
-* 
+* IRC: 
+ 
+ Server: `irc.libera.chat`
+ Port: `6697`
+ TLS: enabled
+ Join `#libera`, and type `/join #solderbb` or `/join #solderbb-bugs`
+ 
+ You need to register a nickspace before you can join. See [this gist](https://gist.github.com/FieryMewtwo/21f233d4346a5440f081a1ac30feacf9) for how to do this.

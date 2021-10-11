@@ -1,12 +1,13 @@
 <?php
 
 /**
- * Copyright (C) 2008-2012 FluxBB
- * based on code by Rickard Andersson copyright (C) 2002-2008 PunBB
- * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+ * Copyright (C) 2008-2021 SolderBB
+ * based on code by Rickard Andersson, Visman, and the FluxBB devs,
+ * copyright (C) 2002-2008 PunBB and 2008-2012 FluxBB
+ * Licensed under the GPL v2 or higher
  */
 
-// The FluxBB version this script installs
+// The SolderBB version this script installs
 define('FORUM_VERSION', '1.5.11');
 
 define('FORUM_VER_REVISION', 82);	// номер сборки - Visman
@@ -60,7 +61,7 @@ require PUN_ROOT.'lang/'.$install_lang.'/install.php';
 
 if (file_exists(PUN_ROOT.'include/config.php'))
 {
-	// Check to see whether FluxBB is already installed
+	// Check to see whether SolderBB is already installed
 	include PUN_ROOT.'include/config.php';
 
 	// If we have the 1.3-legacy constant defined, define the proper 1.4 constant so we don't get an incorrect "need to install" message
@@ -69,7 +70,7 @@ if (file_exists(PUN_ROOT.'include/config.php'))
 
 	// If PUN is defined, config.php is probably valid and thus the software is installed
 	if (defined('PUN'))
-		exit($lang_install['Already installed']);
+		exit($lang_install['SolderBB is already installed']);
 }
 
 // Define PUN because email.php requires it
@@ -153,7 +154,7 @@ if (!isset($_POST['form_sent']))
 
 	$db_type = $db_name = $db_username = $db_prefix = $username = $email = $salt1 = '';
 	$db_host = 'localhost';
-	$title = $lang_install['My FluxBB Forum'];
+	$title = $lang_install['My SolderBB Forum'];
 	$description = '<p><span>'.$lang_install['Description'].'</span></p>';
 	$default_lang = $install_lang;
 	$default_style = 'Air';
@@ -199,9 +200,9 @@ else
 		$alerts[] = 'Salt must be at least 10 characters long.';
 
 	if (pun_strlen($password1) < 9)
-		$alerts[] = $lang_install['Short password'];
+		$alerts[] = $lang_install['A longer password must be used.'];
 	else if ($password1 != $password2 || pun_strlen($password1) > 100000)
-		$alerts[] = $lang_install['Passwords not match'];
+		$alerts[] = $lang_install['The passwords do not match'];
 
 	// Validate email
 	require PUN_ROOT.'include/email.php';
@@ -223,11 +224,11 @@ else
 
 // Check if the cache directory is writable
 if (!forum_is_writable(FORUM_CACHE_DIR))
-	$alerts[] = sprintf($lang_install['Alert cache'], FORUM_CACHE_DIR);
+	$alerts[] = sprintf($lang_install['Make sure that /cahe/ is CHMODDED to 777'], FORUM_CACHE_DIR);
 
 // Check if default avatar directory is writable
 if (!forum_is_writable(PUN_ROOT.'img/avatars/'))
-	$alerts[] = sprintf($lang_install['Alert avatar'], PUN_ROOT.'img/avatars/');
+	$alerts[] = sprintf($lang_install['Make sure that /img/avatars/ is CHMODDED to 777'], PUN_ROOT.'img/avatars/');
 
 if (!isset($_POST['form_sent']) || !empty($alerts))
 {
@@ -257,7 +258,7 @@ if (!isset($_POST['form_sent']) || !empty($alerts))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $lang_install['FluxBB Installation'] ?></title>
+<title><?php echo $lang_install['SolderBB Installation'] ?></title>
 <link rel="stylesheet" type="text/css" href="style/<?php echo pun_htmlspecialchars($default_style) ?>.css" />
 <script type="text/javascript">
 /* <![CDATA[ */
@@ -301,7 +302,7 @@ function process_form(the_form)
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span><?php echo $lang_install['FluxBB Installation'] ?></span></h1>
+			<h1><span><?php echo $lang_install['SolderBB Installation'] ?></span></h1>
 			<div id="brddesc"><p><?php echo $lang_install['Welcome'] ?></p></div>
 		</div>
 	</div>
@@ -405,7 +406,7 @@ foreach ($alerts as $cur_alert)
 			</div>
 			<div class="inform">
 				<fieldset>
-					<legend><?php echo $lang_install['Database enter informations'] ?></legend>
+					<legend><?php echo $lang_install['Enter database informations'] ?></legend>
 					<div class="infldset">
 						<p><?php echo $lang_install['Info 5'] ?></p>
 						<label class="conl"><?php echo $lang_install['Database username'] ?><br /><input type="text" name="db_username" value="<?php echo pun_htmlspecialchars($db_username) ?>" size="30" /><br /></label>
@@ -416,7 +417,7 @@ foreach ($alerts as $cur_alert)
 			</div>
 			<div class="inform">
 				<fieldset>
-					<legend><?php echo $lang_install['Database enter prefix'] ?></legend>
+					<legend><?php echo $lang_install['Enter database prefix'] ?></legend>
 					<div class="infldset">
 						<p><?php echo $lang_install['Info 6'] ?></p>
 						<label><?php echo $lang_install['Table prefix'] ?><br /><input id="db_prefix" type="text" name="db_prefix" value="<?php echo pun_htmlspecialchars($db_prefix) ?>" size="20" maxlength="30" /><br /></label>
@@ -565,7 +566,7 @@ else
 	}
 
 
-	// Make sure FluxBB isn't already installed
+	// Make sure SolderBB isn't already installed
 	if ($db->table_exists('users'))
 	{
 		$result = $db->query('SELECT 1 FROM '.$db_prefix.'users WHERE id=1');
@@ -2123,7 +2124,7 @@ else
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title><?php echo $lang_install['FluxBB Installation'] ?></title>
+<title><?php echo $lang_install['SolderBB Installation'] ?></title>
 <link rel="stylesheet" type="text/css" href="style/<?php echo pun_htmlspecialchars($default_style) ?>.css" />
 </head>
 <body>
@@ -2135,8 +2136,8 @@ else
 <div id="brdheader" class="block">
 	<div class="box">
 		<div id="brdtitle" class="inbox">
-			<h1><span><?php echo $lang_install['FluxBB Installation'] ?></span></h1>
-			<div id="brddesc"><p><?php echo $lang_install['FluxBB has been installed'] ?></p></div>
+			<h1><span><?php echo $lang_install['SolderBB Installation'] ?></span></h1>
+			<div id="brddesc"><p><?php echo $lang_install['SolderBB has been installed'] ?></p></div>
 		</div>
 	</div>
 </div>
@@ -2192,7 +2193,7 @@ else
 		<div class="fakeform">
 			<div class="inform">
 				<div class="forminfo">
-					<p><?php echo $lang_install['FluxBB fully installed'] ?></p>
+					<p><?php echo $lang_install['SolderBB has been installed.'] ?></p>
 				</div>
 			</div>
 		</div>

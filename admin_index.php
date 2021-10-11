@@ -1,9 +1,10 @@
 <?php
 
 /**
- * Copyright (C) 2008-2012 FluxBB
- * based on code by Rickard Andersson copyright (C) 2002-2008 PunBB
- * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+ * Copyright (C) 2008-2021 SolderBB
+ * based on code by Rickard Andersson, Visman, and the FluxBB devs,
+ * copyright (C) 2002-2008 PunBB and 2008-2012 FluxBB
+ * Licensed under the GPL v2 or higher
  */
 
 // Tell header.php to use the admin template

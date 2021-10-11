@@ -100,9 +100,7 @@ function get_useragent_names($usrag)
 			case '10.0':
 				$system = 'Windows 10';
 				break;
-			case '11.0':
-				$system = 'Windows 11';
-				break;
+			
 		}
 	}
 

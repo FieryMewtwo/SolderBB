@@ -2,9 +2,9 @@
 
 /**
  * Copyright (C) 2008-2021 SolderBB
- * based on code by Rickard Andersson and MioVisman
- * copyright (C) 2002-2008 PunBB and (c) 2008-2021 Visman
- * License: http://www.gnu.org/licenses/gpl.html GPL version 2 or higher
+ * based on code by Rickard Andersson, Visman, and the FluxBB devs,
+ * copyright (C) 2002-2008 PunBB and 2008-2012 FluxBB
+ * Licensed under the GPL v2 or higher
  */
 
 define('WITT_ENABLE', 300);

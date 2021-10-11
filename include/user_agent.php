@@ -30,7 +30,7 @@ function get_useragent_names($usrag)
 	$usrag = strtolower($usrag);
 	
 	// Browser detection
-	$browsers = array('Opera', 'Avant', 'Maxthon', 'Edge', 'MSIE', 'OPR', 'YaBrowser', 'Chromium', 'Vivaldi', 'Chrome', 'Arora', 'Epiphany', 'Galeon', 'iCab', 'Konqueror', 'Safari', 'Flock', 'Iceweasel', 'SeaMonkey', 'Netscape', 'K-Meleon', 'Firefox', 'Camino', 'Trident');
+	$browsers = array('Opera', 'Avant', 'Maxthon', 'Edge', 'MSIE', 'OPR', 'YaBrowser', 'Chromium', 'Vivaldi', 'Chrome', 'Arora', 'GNOME Web', 'Galeon', 'iCab', 'Konqueror', 'Safari', 'Flock', 'Iceweasel', 'SeaMonkey', 'Netscape', 'K-Meleon', 'Firefox', 'Camino', 'Trident');
 
 	$browser = ua_search_for_item($browsers, $usrag);
 
